@@ -1,0 +1,5 @@
+# .gitognore for nvim setup
+node_modules/
+*.sh
+lazy-lock.json
+venv/
