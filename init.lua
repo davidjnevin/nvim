@@ -9,22 +9,22 @@ vim.g.pyxversion = 3
 vim.g.bulitin_lsp = true
 
 -- Plugins
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system {
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  }
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("dn.plugins")
+require("lazy").setup "dn.plugins"
 
 -- Keymaps
-require("dn.mappings")
+require "dn.mappings"
 
 -- Behaviors
 vim.opt.belloff = "all" -- NO BELLS!
@@ -38,9 +38,9 @@ vim.opt.mouse = "nv" -- use mouse in normal, visual modes
 vim.opt.mousescroll = "ver:3,hor:0" -- scroll vertically by 3 lines, no horizontal scrolling
 
 -- Indentation
-vim.opt.autoindent = true -- continue indentation to new line
-vim.opt.smartindent = true -- add extra indent when it makes sense
-vim.opt.smarttab = true -- <Tab> at the start of a line behaves as expected
+vim.opt.autoindent = false -- continue indentation to new line
+vim.opt.smartindent = false -- add extra indent when it makes sense
+vim.opt.smarttab = false -- <Tab> at the start of a line behaves as expected
 vim.opt.expandtab = true -- <Tab> inserts spaces
 vim.opt.shiftwidth = 4 -- >>, << shift line by 4 spaces
 vim.opt.tabstop = 4 -- <Tab> appears as 4 spaces
@@ -49,7 +49,7 @@ vim.opt.softtabstop = 4 -- <Tab> behaves as 4 spaces when editing
 -- Colors
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd "colorscheme tokyonight-night"
 
 -- Look and feel
 vim.opt.number = true
@@ -57,14 +57,14 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- show the sign column always
 vim.opt.list = true -- show list chars
 vim.opt.listchars = {
-	-- these list chars
-	tab = "<->",
-	nbsp = "␣",
-	extends = "…",
-	precedes = "…",
-	trail = "·",
-	multispace = "·", -- show chars if I have multiple spaces between text
-	leadmultispace = " ", -- ...but don't show any when they're at the start
+  -- these list chars
+  tab = "<->",
+  nbsp = "␣",
+  extends = "…",
+  precedes = "…",
+  trail = "·",
+  multispace = "·", -- show chars if I have multiple spaces between text
+  leadmultispace = " ", -- ...but don't show any when they're at the start
 }
 vim.opt.scrolloff = 10 -- padding between cursor and top/bottom of window
 vim.opt.foldlevel = 0 -- allow folding the whole way down
