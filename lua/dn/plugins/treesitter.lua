@@ -41,7 +41,8 @@ return {
         enable = true,
       },
       indent = {
-        enable = false, -- buggy :/
+        enable = {}, -- buggy :/
+        -- disable = { "python" },
       },
       -- custom text objects
       textobjects = {
@@ -115,7 +116,7 @@ return {
         filetypes = { "html", "vue" },
       },
       playground = {
-        enabled = false,
+        enabled = true,
       },
     }
   end,
