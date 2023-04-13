@@ -15,7 +15,7 @@ mapper("n", "<Leader><Leader>", "<C-^>")
 mapper("n", ":W", ":w")
 mapper("n", "I", "0I")
 
--- Movemint
+-- Movement
 mapper("n", "<C-j>", "<C-w>j")
 mapper("n", "<C-h>", "<C-w>h")
 mapper("n", "<C-k>", "<C-w>k")
@@ -49,3 +49,10 @@ mapper("n", "<Leader>tn", ":call termcmd#vert()<CR>") -- open new term in vertic
 mapper("n", "<Leader>ts", ":call termcmd#horiz()<CR>") -- open new term in horizontal split
 
 mapper("n", "<Leader>rr", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>") -- start language servers
+
+-- Test mapper
+mapper("n", "<leader>T", ":TestLast<cr>")
+mapper("n", "<leader>Tf", ":TestFile<cr>")
+mapper("n", "<leader>Tn", ":TestNearest<cr>")
+mapper("n", "<leader>Tv", ":TestVisit<cr>")
+mapper("n", "<leader>T", ":TestNearest<cr>")
