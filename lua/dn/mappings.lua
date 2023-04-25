@@ -33,26 +33,26 @@ mapper("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 mapper("t", "<C-l>", [[<C-\><C-n><C-w>l]])
 
 -- Other basics
-mapper("n", "<Down>", "<Nop>") -- [["pdd"pp]] -- move line down
-mapper("n", "<Up>", "<Nop>") -- [["pddk"pP]] -- move line up
-mapper("n", "<C-e>", "3<C-e>") -- scroll down more quickly
-mapper("n", "<C-y>", "3<C-y>") -- scroll up more quickly
-mapper("n", "<Leader>bn", ":bn<CR>") -- next buffer
-mapper("n", "<Leader>bp", ":bp<CR>") -- prev buffer
-mapper("n", "<Leader>bd", ":bp | bd #<CR>") -- delete the current buffer
-mapper("n", "+", "=") -- new format mapping
-mapper("n", "<Leader>nn", ":set number!<CR>") -- toggle line numbers
+mapper("n", "<Down>", "<Nop>")                      -- [["pdd"pp]] -- move line down
+mapper("n", "<Up>", "<Nop>")                        -- [["pddk"pP]] -- move line up
+mapper("n", "<C-e>", "3<C-e>")                      -- scroll down more quickly
+mapper("n", "<C-y>", "3<C-y>")                      -- scroll up more quickly
+mapper("n", "<Leader>bn", ":bn<CR>")                -- next buffer
+mapper("n", "<Leader>bp", ":bp<CR>")                -- prev buffer
+mapper("n", "<Leader>bd", ":bp | bd #<CR>")         -- delete the current buffer
+mapper("n", "+", "=")                               -- new format mapping
+mapper("n", "<Leader>nn", ":set number!<CR>")       -- toggle line numbers
 mapper("n", "<Leader>z", ":call ToggleFocus()<CR>") -- toggle focus on current window
 
 -- terminal
-mapper("n", "<Leader>tn", ":call termcmd#vert()<CR>") -- open new term in vertical split
-mapper("n", "<Leader>ts", ":call termcmd#horiz()<CR>") -- open new term in horizontal split
+mapper("n", "<Leader>tn", ":call termcmd#vert()<CR>")                                       -- open new term in vertical split
+mapper("n", "<Leader>ts", ":call termcmd#horiz()<CR>")                                      -- open new term in horizontal split
 
 mapper("n", "<Leader>rr", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>") -- start language servers
 
 -- Test mapper
-mapper("n", "<leader>T", ":TestLast<cr>")
+mapper("n", "<leader>Tl", ":TestLast<cr>")
 mapper("n", "<leader>Tf", ":TestFile<cr>")
 mapper("n", "<leader>Tn", ":TestNearest<cr>")
 mapper("n", "<leader>Tv", ":TestVisit<cr>")
-mapper("n", "<leader>T", ":TestNearest<cr>")
+mapper("n", "<leader>Tt", ":TestNearest<cr>")
