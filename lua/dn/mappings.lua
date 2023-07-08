@@ -20,11 +20,25 @@ mapper("n", "<C-j>", "<C-w>j")
 mapper("n", "<C-h>", "<C-w>h")
 mapper("n", "<C-k>", "<C-w>k")
 mapper("n", "<C-l>", "<C-w>l")
+
 -- Move without firing 'BufEnter' autocommands
-mapper("n", "<M-j>", ":noautocmd wincmd j<CR>")
-mapper("n", "<M-h>", ":noautocmd wincmd h<CR>")
-mapper("n", "<M-k>", ":noautocmd wincmd k<CR>")
-mapper("n", "<M-l>", ":noautocmd wincmd l<CR>")
+-- mapper("n", "<M-j>", ":noautocmd wincmd j<CR>")
+-- mapper("n", "<M-h>", ":noautocmd wincmd h<CR>")
+-- mapper("n", "<M-k>", ":noautocmd wincmd k<CR>")
+-- mapper("n", "<M-l>", ":noautocmd wincmd l<CR>")
+
+-- Visual-mode commands
+mapper("v", "<c-J>", ":MoveBlock(1)<CR>")
+mapper("v", "<c-K>", ":MoveBlock(-1)<CR>")
+
+-- Move lines
+mapper("n", "<c-K>", ":MoveLine(-1)<CR>")
+mapper("n", "<c-J>", ":MoveLine(1)<CR>")
+mapper("n", "<c-H>", ":MoveHChar(-1)<CR>")
+mapper("n", "<A-L>", ":MoveHChar(1)<CR>")
+mapper("n", "<leader>wf", ":MoveWord(1)<CR>")
+mapper("n", "<leader>wb", ":MoveWord(-1)<CR>")
+
 -- Term
 mapper("t", "<Esc><Esc>", [[<C-\><C-n>]])
 mapper("t", "<C-j>", [[<C-\><C-n><C-w>j]])
@@ -55,4 +69,6 @@ mapper("n", "<leader>Tl", ":TestLast<cr>")
 mapper("n", "<leader>Tf", ":TestFile<cr>")
 mapper("n", "<leader>Tn", ":TestNearest<cr>")
 mapper("n", "<leader>Tv", ":TestVisit<cr>")
+mapper("n", "<leader>Tt", ":TestNearest<cr>")
+mapper("n", "<leader>Tt", ":TestNearest<cr>")
 mapper("n", "<leader>Tt", ":TestNearest<cr>")
