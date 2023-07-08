@@ -1,5 +1,5 @@
 -- Mason
-local servers = { "pyright", "lua_ls" }
+local servers = { "pyright", "lua_ls", "html" }
 
 require("mason").setup()
 require("mason-lspconfig").setup {
@@ -277,7 +277,7 @@ lspconfig.dockerls.setup {
 -- bash
 lspconfig.bashls.setup {
 	on_attach = custom_attach,
-	filetypes = { "bash", "sh", "zsh" },
+	filetypes = { "bash", "sh", "zsh", ".env" },
 }
 
 -- lua
