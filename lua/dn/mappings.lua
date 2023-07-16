@@ -21,6 +21,12 @@ mapper("n", "<C-h>", "<C-w>h")
 mapper("n", "<C-k>", "<C-w>k")
 mapper("n", "<C-l>", "<C-w>l")
 
+-- CMake
+mapper('', '<leader>cg', ':CMakeGenerate<cr>')
+mapper('', '<leader>cb', ':CMakeBuild<cr>')
+mapper('', '<leader>cq', ':CMakeClose<cr>')
+mapper('', '<leader>cc', ':CMakeClean<cr>')
+
 -- Move without firing 'BufEnter' autocommands
 -- mapper("n", "<M-j>", ":noautocmd wincmd j<CR>")
 -- mapper("n", "<M-h>", ":noautocmd wincmd h<CR>")

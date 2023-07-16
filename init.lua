@@ -12,14 +12,14 @@ vim.g.pydocstring_doq_path = "/Library/Frameworks/Python.framework/Versions/3.11
 -- Plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system {
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	}
+    vim.fn.system {
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    }
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup "dn.plugins"
@@ -58,14 +58,14 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- show the sign column always
 vim.opt.list = true        -- show list chars
 vim.opt.listchars = {
-	-- these list chars
-	tab = "<->",
-	nbsp = "␣",
-	extends = "…",
-	precedes = "…",
-	trail = "·",
-	multispace = "·",      -- show chars if I have multiple spaces between text
-	leadmultispace = " ",   -- ...but don't show any when they're at the start
+    -- these list chars
+    tab = "<->",
+    nbsp = "␣",
+    extends = "…",
+    precedes = "…",
+    trail = "·",
+    multispace = "·",      -- show chars if I have multiple spaces between text
+    leadmultispace = " ",   -- ...but don't show any when they're at the start
 }
 vim.opt.scrolloff = 10      -- padding between cursor and top/bottom of window
 vim.opt.foldlevel = 0       -- allow folding the whole way down
@@ -82,3 +82,7 @@ vim.opt.ignorecase = true -- case insensitive search...
 vim.opt.smartcase = true  -- unless I use caps
 vim.opt.hlsearch = true   -- highlight matching text
 vim.opt.incsearch = true  -- update results while I type
+
+-- Cmake
+vim.g.cmake_root_markers = { 'CMakeLists.txt' }
+vim.g.cmake_link_compile_commands = 1

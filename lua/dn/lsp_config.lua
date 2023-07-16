@@ -1,10 +1,14 @@
 -- Mason
-local servers = { "pyright", "lua_ls", "html" }
+local servers = { "pyright", "lua_ls", "html", "cssls", "jsonls" }
 
 require("mason").setup()
 require("mason-lspconfig").setup {
 	ensure_installed = servers,
 }
+
+-- C++ and CMake
+require 'lspconfig'.ccls.setup {}
+require 'lspconfig'.cmake.setup {}
 
 local mason_null_ls = require "mason-null-ls"
 mason_null_ls.setup {
@@ -146,7 +150,7 @@ null_ls.setup {
 	on_attach = custom_attach,
 	should_attach = function(bufnr)
 		local cur_ft = vim.bo[bufnr].filetype
-		return vim.tbl_contains({ "vue", "typescript", "javascript", "python", "lua" }, cur_ft)
+		return vim.tbl_contains({ "vue", "typescript", "javascript", "python", "lua", "cmake" }, cur_ft)
 	end,
 
 	-- custom sources
@@ -318,6 +322,28 @@ lspconfig.jsonls.setup {
 		},
 	},
 }
+
+-- c/c++
+lspconfig.ccls.setup {
+	init_options = {
+		compilationDatabaseDirectory = "Debug",
+		index = {
+			threads = 0,
+		},
+		clang = {
+			excludeArgs = { "-frounding-math" },
+		},
+	},
+	filetypes = { "c", "cpp", "objc", "objcpp" },
+	cmd = { "ccls" },
+	on_attach = custom_attach,
+	root_dir = function(fname)
+		return lspconfig.util.root_pattern("compile_commands.json")(fname) or lspconfig.util.root_pattern(".ccls")(fname) or
+			lspconfig.util.path.dirname(fname)
+	end,
+	single_file = false,
+}
+
 
 -- rust
 lspconfig.rust_analyzer.setup {
