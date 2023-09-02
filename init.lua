@@ -86,3 +86,6 @@ vim.opt.incsearch = true  -- update results while I type
 -- Cmake
 vim.g.cmake_root_markers = { 'CMakeLists.txt' }
 vim.g.cmake_link_compile_commands = 1
+
+-- GTest
+vim.g.gtest_command = "./tests"

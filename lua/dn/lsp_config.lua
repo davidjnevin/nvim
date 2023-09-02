@@ -1,5 +1,5 @@
 -- Mason
-local servers = { "pyright", "lua_ls", "html", "cssls", "jsonls" }
+local servers = { "pyright", "lua_ls", "html", "cssls", "jsonls", "clangd", "cmake" }
 
 require("mason").setup()
 require("mason-lspconfig").setup {
@@ -348,4 +348,12 @@ lspconfig.ccls.setup {
 -- rust
 lspconfig.rust_analyzer.setup {
 	on_attach = custom_attach,
+}
+
+-- emmet
+
+lspconfig.emmet_ls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	flags = lsp_flags
 }
