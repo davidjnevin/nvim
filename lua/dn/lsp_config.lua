@@ -334,8 +334,8 @@ lspconfig.ccls.setup {
 			excludeArgs = { "-frounding-math" },
 		},
 	},
-	filetypes = { "c", "cpp", "objc", "objcpp" },
 	cmd = { "ccls" },
+	filetypes = { "c", "cpp", "objc", "objcpp" },
 	on_attach = custom_attach,
 	root_dir = function(fname)
 		return lspconfig.util.root_pattern("compile_commands.json")(fname) or lspconfig.util.root_pattern(".ccls")(fname) or
