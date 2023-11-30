@@ -16,21 +16,11 @@ return {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			ft = { "vue" },
 		},
-		-- rainbow braces
-		"https://gitlab.com/HiPhish/nvim-ts-rainbow2",
-		-- auto insert closing tags
-		{
-			"windwp/nvim-ts-autotag",
-			ft = {
-				"html",
-				"vue",
-			},
-		},
 		-- View treesitter info
 		"nvim-treesitter/playground",
 	},
 	config = function()
-		vim.opt.foldmethod = "expr"                 -- use function to determine folds
+		vim.opt.foldmethod = "expr"               -- use function to determine folds
 		vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- use treesitter for folding
 
 		require("nvim-treesitter.configs").setup {
@@ -96,20 +86,6 @@ return {
 						["<Leader>sp"] = "@parameter.outer",
 					},
 				},
-			},
-			context_commentstring = {
-				enable = true,
-				enable_autocmd = false, -- Comment.nvim takes care of this automatically
-			},
-			rainbow = {
-				enable = true,
-				-- Which query to use for finding delimiters
-				query = {
-					"rainbow-parens", -- parentheses by default
-					html = "rainbow-tags", -- tags for html
-				},
-				-- Highlight the entire buffer all at once
-				strategy = require "ts-rainbow.strategy.global",
 			},
 			autotag = {
 				enable = true,

@@ -150,7 +150,7 @@ null_ls.setup {
 	on_attach = custom_attach,
 	should_attach = function(bufnr)
 		local cur_ft = vim.bo[bufnr].filetype
-		return vim.tbl_contains({ "vue", "typescript", "javascript", "python", "lua", "cmake" }, cur_ft)
+		return vim.tbl_contains({ "python", "lua", "cmake" }, cur_ft)
 	end,
 
 	-- custom sources
