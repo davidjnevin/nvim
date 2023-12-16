@@ -28,7 +28,7 @@ vim.diagnostic.config {
 		-- Prepend with diagnostic source if there is more than one attached to the buffer
 		-- (e.g. (eslint) Error: blah blah blah)
 		source = "if_many",
-		signs = false,
+		signs = true,
 	},
 	float = {
 		severity_sort = true,
