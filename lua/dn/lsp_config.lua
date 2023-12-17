@@ -70,7 +70,7 @@ end
 local custom_format = function(bufnr)
 	vim.lsp.buf.format {
 		bufnr = bufnr,
-		--    name = "null-ls",
+		name = "null-ls",
 	}
 end
 

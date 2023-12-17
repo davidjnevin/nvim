@@ -111,7 +111,7 @@ return {
 			body = "<leader>G",
 			config = {
 				invoke_on_body = true,
-				color = "pink",      -- let me press other keys _without_ exiting git mode
+				color = "pink", -- let me press other keys _without_ exiting git mode
 				hint = {
 					type = "window", -- one of "statusline", "cmdline", "window"
 					position = "middle-right", -- only applies for type = "window"
@@ -119,9 +119,9 @@ return {
 				},
 				on_enter = function()
 					gs.toggle_signs(true)
-					gs.toggle_deleted(true)     -- show deleted lines
-					gs.toggle_linehl(true)      -- light up changed lines
-					gs.toggle_word_diff(true)   -- highlight changed words
+					gs.toggle_deleted(true) -- show deleted lines
+					gs.toggle_linehl(true) -- light up changed lines
+					gs.toggle_word_diff(true) -- highlight changed words
 					gs.setqflist("all", { open = false }) -- all hunks in qf, but don't open qf list
 					sidebar.open()
 				end,

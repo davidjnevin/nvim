@@ -23,6 +23,49 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup "dn.plugins"
+require("toggleterm").setup{}
+
+-- Lazygit setup
+local Terminal = require("toggleterm.terminal").Terminal
+local lg_cmd = "lazygit -w $PWD"
+
+if vim.v.servername ~= nil then
+	lg_cmd = string.format(
+		"NVIM_SERVER=%s lazygit -ucf ~/.config/nvim/lazygit.toml -w $PWD",
+		vim.v.servername
+	)
+end
+
+local lazygit = Terminal:new({
+	cmd = lg_cmd,
+	count = 5,
+	direction = "float",
+	float_opts = {
+		border = "double",
+		width = function () return vim.o.columns end,
+		height = function () return vim.o.lines end,
+	},
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"n",
+			"q",
+			"<cmd>close<CR>",
+			{ noremap = true, silent = true }
+		)
+	end,
+})
+
+function Edit(fn, line_number)
+    local edit_cmd = string.format(":e %s", fn)
+    if line_number ~= nil then
+        edit_cmd = string.format(":e +%d %s", line_number, fn)
+    end
+    vim.cmd(edit_cmd)
+end
+
+function Lazygit_toggle() lazygit:toggle() end
 
 -- Keymaps
 require "dn.mappings"
@@ -31,6 +74,7 @@ require "dn.mappings"
 vim.opt.belloff = "all"                                    -- NO BELLS!
 vim.opt.completeopt = { "menuone", "noselect" }            -- ins-completion how I like it
 vim.opt.swapfile = false                                   -- no swap files
+vim.opt.backup = false                                     -- no backups
 vim.opt.inccommand = "nosplit"                             -- preview %s commands live as I type
 vim.opt.undofile = true                                    -- keep track of my 'undo's between sessions
 vim.opt.grepprg = "rg --vimgrep --smart-case --no-heading" -- search with rg
@@ -64,10 +108,11 @@ vim.opt.listchars = {
     extends = "…",
     precedes = "…",
     trail = "·",
-    multispace = "·",      -- show chars if I have multiple spaces between text
+    multispace = "·",       -- show chars if I have multiple spaces between text
     leadmultispace = " ",   -- ...but don't show any when they're at the start
 }
 vim.opt.scrolloff = 10      -- padding between cursor and top/bottom of window
+vim.opt.sidescrolloff = 10  -- padding between cursor and left/right of window
 vim.opt.foldlevel = 0       -- allow folding the whole way down
 vim.opt.foldlevelstart = 99 -- open files with all folds open
 vim.opt.splitright = true   -- prefer vsplitting to the right

@@ -8,7 +8,7 @@ local fugitive = {
 		},
 		{
 			"<Leader>gd",
-			"<cmd>GvdiffsplitCR>",
+			"<cmd>Gdiffsplit<CR>",
 			desc = "diff file in split",
 		},
 	},
