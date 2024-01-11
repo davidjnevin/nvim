@@ -17,6 +17,7 @@ return {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "black", -- python formatter
+		"isort", -- python formatter
         "ruff", -- python linter
         "eslint_d", -- js linter
       },
@@ -42,7 +43,7 @@ return {
         }), -- js/ts formatter
         formatting.stylua, -- lua formatter
         formatting.isort,
-        -- formatting.black,
+        formatting.black,
         diagnostics.ruff,
         diagnostics.eslint_d.with({ -- js/ts linter
           condition = function(utils)
