@@ -77,6 +77,13 @@ au("BufEnter", {
 })
 
 au("BufEnter", {
+	pattern = "*.toml",
+	callback = function()
+		vim.opt_local.filetype = "toml"
+	end,
+})
+
+au("BufEnter", {
 	pattern = "*.tmTheme",
 	callback = function()
 		vim.opt_local.filetype = "tmTheme"
