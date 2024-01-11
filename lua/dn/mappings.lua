@@ -81,6 +81,8 @@ mapper("n", "<leader>Tt", ":TestNearest<cr>")
 mapper("n", "<leader>Tt", ":TestNearest<cr>")
 mapper("n", "<leader>Tt", ":TestNearest<cr>")
 
+-- format buffer
+mapper("n", "<leader>F", ":lua vim.lsp.buf.format()<cr>")
 -- Harpoon
 mapper("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
 mapper("n", "<leader>hd", ":lua require('harpoon.mark').rm_file()<CR>")
