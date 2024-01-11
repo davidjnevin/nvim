@@ -96,21 +96,21 @@ return {
     -- })
 
     -- configure svelte server
-    lspconfig["svelte"].setup({
-      capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
+    -- lspconfig["svelte"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = function(client, bufnr)
+    --     on_attach(client, bufnr)
 
-        vim.api.nvim_create_autocmd("BufWritePost", {
-          pattern = { "*.js", "*.ts" },
-          callback = function(ctx)
-            if client.name == "svelte" then
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-            end
-          end,
-        })
-      end,
-    })
+    --     vim.api.nvim_create_autocmd("BufWritePost", {
+    --       pattern = { "*.js", "*.ts" },
+    --       callback = function(ctx)
+    --         if client.name == "svelte" then
+    --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+    --         end
+    --       end,
+    --     })
+    --   end,
+    -- })
 
     -- configure emmet language server
     lspconfig["emmet_ls"].setup({
@@ -120,7 +120,7 @@ return {
     })
 
     -- configure python server
-    lspconfig["ruff_lsp"].setup({
+    lspconfig["jedi_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
