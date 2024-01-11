@@ -100,7 +100,7 @@ vim.cmd "colorscheme tokyonight-night"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- show the sign column always
-vim.opt.list = true        -- show list chars
+vim.opt.list = false        -- show list chars
 vim.opt.listchars = {
     -- these list chars
     tab = "<->",
