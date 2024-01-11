@@ -25,7 +25,9 @@ return {
 
 		require("nvim-treesitter.configs").setup {
 			-- either "all" or a list of languages
-			ensure_installed = { "lua", "vim", "python" },
+			ensure_installed = { "lua", "vim", "python", "toml" },
+			ignore_install = { "all" },
+			auto_install = false,
 			highlight = {
 				-- false will disable the whole extension
 				enable = true,
