@@ -12,18 +12,18 @@ vim.g.pydocstring_doq_path = "/Library/Frameworks/Python.framework/Versions/3.11
 -- Plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system {
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    }
+	vim.fn.system {
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	}
 end
 vim.opt.rtp:prepend(lazypath)
 require("dn.lazy")
-require("toggleterm").setup{}
+require("toggleterm").setup {}
 
 -- Lazygit setup
 local Terminal = require("toggleterm.terminal").Terminal
@@ -42,8 +42,8 @@ local lazygit = Terminal:new({
 	direction = "float",
 	float_opts = {
 		border = "double",
-		width = function () return vim.o.columns end,
-		height = function () return vim.o.lines end,
+		width = function() return vim.o.columns end,
+		height = function() return vim.o.lines end,
 	},
 	on_open = function(term)
 		vim.cmd("startinsert!")
@@ -58,11 +58,11 @@ local lazygit = Terminal:new({
 })
 
 function Edit(fn, line_number)
-    local edit_cmd = string.format(":e %s", fn)
-    if line_number ~= nil then
-        edit_cmd = string.format(":e +%d %s", line_number, fn)
-    end
-    vim.cmd(edit_cmd)
+	local edit_cmd = string.format(":e %s", fn)
+	if line_number ~= nil then
+		edit_cmd = string.format(":e +%d %s", line_number, fn)
+	end
+	vim.cmd(edit_cmd)
 end
 
 function Lazygit_toggle() lazygit:toggle() end
@@ -100,16 +100,16 @@ vim.cmd "colorscheme tokyonight-night"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- show the sign column always
-vim.opt.list = false        -- show list chars
+vim.opt.list = false       -- show list chars
 vim.opt.listchars = {
-    -- these list chars
-    tab = "<->",
-    nbsp = "␣",
-    extends = "…",
-    precedes = "…",
-    trail = "·",
-    multispace = "·",       -- show chars if I have multiple spaces between text
-    leadmultispace = " ",   -- ...but don't show any when they're at the start
+	-- these list chars
+	tab = "<->",
+	nbsp = "␣",
+	extends = "…",
+	precedes = "…",
+	trail = "·",
+	multispace = "·",       -- show chars if I have multiple spaces between text
+	leadmultispace = " ",   -- ...but don't show any when they're at the start
 }
 vim.opt.scrolloff = 10      -- padding between cursor and top/bottom of window
 vim.opt.sidescrolloff = 10  -- padding between cursor and left/right of window
