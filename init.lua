@@ -13,6 +13,8 @@ vim.g.pydocstring_doq_path = "/Library/Frameworks/Python.framework/Versions/3.11
 -- Lazy Plugin Budler
 require("dn.lazy")
 
+require("toggleterm").setup {}
+
 -- Keymaps
 require "dn.mappings"
 

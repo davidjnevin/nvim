@@ -66,7 +66,7 @@ mapper("n", "<Leader>ts", ":call termcmd#horiz()<CR>")                          
 
 mapper("n", "<Leader>rr", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>") -- start language servers
 -- Lazygit toggle
-mapper("n", "<leader>lg", "<cmd>lua Lazygit_toggle()<CR>")
+mapper("n", "<leader>lg", ":LazyGit<CR>")
 
 -- Test mapper
 mapper("n", "<leader>Tl", ":TestLast<cr>")
