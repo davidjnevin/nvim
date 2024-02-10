@@ -40,10 +40,6 @@ mapper("v", "<c-K>", ":MoveBlock(-1)<CR>")
 -- Move lines
 mapper("n", "<c-K>", ":MoveLine(-1)<CR>")
 mapper("n", "<c-J>", ":MoveLine(1)<CR>")
-mapper("n", "<c-H>", ":MoveHChar(-1)<CR>")
-mapper("n", "<A-L>", ":MoveHChar(1)<CR>")
-mapper("n", "<leader>wf", ":MoveWord(1)<CR>")
-mapper("n", "<leader>wb", ":MoveWord(-1)<CR>")
 
 -- Term
 mapper("t", "<Esc><Esc>", [[<C-\><C-n>]])
