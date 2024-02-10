@@ -71,6 +71,8 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+	local lsp_flags = { debounce_text_changes = 150 , allow_incremental_sync = true }
+
     -- configure html server
     lspconfig["html"].setup({
       capabilities = capabilities,
@@ -78,10 +80,11 @@ return {
     })
 
     -- configure typescript server with plugin
-    -- lspconfig["tsserver"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
+     lspconfig["tsserver"].setup({
+       capabilities = capabilities,
+       on_attach = on_attach,
+      filetypes = { "typescriptreact", "javascriptreact", "javascript", "typescript" },
+     })
 
     -- configure css server
     lspconfig["cssls"].setup({
@@ -89,11 +92,11 @@ return {
       on_attach = on_attach,
     })
 
-    -- -- configure tailwindcss server
-    -- lspconfig["tailwindcss"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
+     -- configure tailwindcss server
+     lspconfig["tailwindcss"].setup({
+       capabilities = capabilities,
+       on_attach = on_attach,
+     })
 
     -- configure svelte server
     -- lspconfig["svelte"].setup({
@@ -117,6 +120,14 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+	  lsp_flags = lsp_flags,
+    })
+
+    -- configure json server
+    lspconfig["jsonls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "json", "jsonc" },
     })
 
     -- configure python server
