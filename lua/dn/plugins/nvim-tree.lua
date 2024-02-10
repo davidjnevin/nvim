@@ -5,10 +5,12 @@ return {
 		view = {
 			adaptive_size = true,
 			width = 30,
-			side = "left",
+			side = "right",
+
+
 		},
 		git = {
-			enable = false, -- show git statuses in the tree
+			enable = true, -- show git statuses in the tree
 			ignore = false, -- still show .gitignored files
 		},
 	},
