@@ -4,20 +4,6 @@ return {
 
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
-	-- autopairs
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup {
-				map_cr = true, -- send closing symbol to its own line
-				check_ts = true, -- use treesitter
-			}
-		end,
-		cond = function()
-			return not vim.tbl_contains({ "TelescopePrompt", "fugitive" }, vim.opt.filetype)
-		end,
-		event = "InsertEnter",
-	},
 	-- highlight color codes
 	{
 		"norcalli/nvim-colorizer.lua",
