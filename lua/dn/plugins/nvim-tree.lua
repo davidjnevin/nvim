@@ -5,7 +5,7 @@ return {
 		view = {
 			adaptive_size = true,
 			width = 30,
-			side = "right",
+			side = "left",
 
 
 		},
