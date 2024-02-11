@@ -25,7 +25,7 @@ return {
 
 		require("nvim-treesitter.configs").setup {
 			-- either "all" or a list of languages
-			ensure_installed = { "lua", "vim", "python", "toml" },
+			ensure_installed = { "lua", "vim", "python", "toml", "json", "yaml", "html", "css", "javascript", "typescript", "tsx", "vue"},
 			ignore_install = { "all" },
 			auto_install = false,
 			highlight = {
