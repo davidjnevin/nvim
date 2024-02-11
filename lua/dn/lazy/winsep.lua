@@ -4,9 +4,6 @@ return {
 		highlight = {
 			bg = "#16161E",
 			fg = "#c099ff",
-			-- fg = "#1F3442",
-			-- guibg = vim.api.nvim_get_hl_by_name("Normal", true)["background"],
-			-- guifg = "#c099ff",
 		},
 		interval = 50,
 		no_exec_files = { "packer", "TelescopePrompt", "mason", "NvimTree" },
