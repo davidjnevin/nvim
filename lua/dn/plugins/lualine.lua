@@ -82,7 +82,7 @@ return {
 						return "No Active Lsp"
 					end,
 					icon = " LSP:",
-					color = { gui = "bold" },
+					-- color = { gui = "bold" },
 					cond = function() return IS_WIDE() and not IS_START() end,
 				},
 				{
