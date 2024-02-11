@@ -100,22 +100,6 @@ au("FileType", {
 	end,
 })
 
--- Open kitty with all folds closed
-au("BufReadPost", {
-	pattern = "kitty.conf",
-	callback = function()
-		vim.opt_local.foldlevel = 0
-	end,
-})
-
--- Aerial specific mapping
-au("FileType", {
-	pattern = "aerial",
-	callback = function()
-		vim.keymap.set("n", "q", ":q<CR>", { noremap = true, silent = true, buffer = true })
-	end,
-})
-
 -- Enable treesitter powered indent for vue files only
 au("FileType", {
 	pattern = "vue",

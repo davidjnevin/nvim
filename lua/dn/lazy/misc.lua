@@ -18,11 +18,6 @@ return {
 		end,
 		event = "InsertEnter",
 	},
-	-- devicons
-	{
-		"kyazdani42/nvim-web-devicons",
-		lazy = true,
-	},
 	-- highlight color codes
 	{
 		"norcalli/nvim-colorizer.lua",

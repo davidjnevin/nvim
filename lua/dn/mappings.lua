@@ -8,6 +8,7 @@ end
 
 -- Essentials
 mapper("i", "jj", "<Esc>")
+mapper("n", "<c-c>", "<Esc>")
 mapper("n", "<Leader>no", ":nohl<CR>")
 mapper("n", "<BS>", "daw")
 mapper("n", "<CR>", ":e<CR>")

@@ -18,7 +18,7 @@ return {
 		cmp.setup {
 			snippet = {
 				expand = function(args)
-					require("lua.dn.plugins.luasnip").lsp_expand(args.body)
+					require("dn.lazy.luasnip").lsp_expand(args.body)
 				end,
 			},
 			sources = cmp.config.sources {

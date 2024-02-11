@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	tag = "0.1.5",
 	dependencies = {
 		-- fzf filtering for telescope
 		{
@@ -36,7 +37,7 @@ return {
 				dynamic_preview_title = true,
 				border = true,
 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-				color_devicons = true,
+				color_devicons = false,
 				set_env = {
 					["COLORTERM"] = "truecolor",
 				},
@@ -80,6 +81,11 @@ return {
 		telescope.load_extension "file_browser"
 	end,
 	keys = {
+		{
+			"<Leader>fg",
+			"<cmd>Telescope git_files<CR>",
+			desc = "Find files",
+		},
 		{
 			"<Leader>ff",
 			"<cmd>Telescope find_files<CR>",
