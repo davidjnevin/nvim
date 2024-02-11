@@ -11,15 +11,15 @@ mapper("i", "jj", "<Esc>")
 mapper("n", "<Leader>no", ":nohl<CR>")
 mapper("n", "<BS>", "daw")
 mapper("n", "<CR>", ":e<CR>")
-mapper("n", "<Leader><Leader>", "<C-^>")
+mapper("n", "<Leader><Leader>", "<c-^>")
 mapper("n", ":W", ":w")
 mapper("n", "I", "0I")
 
 -- Movement
-mapper("n", "<C-j>", "<C-w>j")
-mapper("n", "<C-h>", "<C-w>h")
-mapper("n", "<C-k>", "<C-w>k")
-mapper("n", "<C-l>", "<C-w>l")
+mapper("n", "<c-j>", "<c-w>j")
+mapper("n", "<c-h>", "<c-w>h")
+mapper("n", "<c-k>", "<c-w>k")
+mapper("n", "<c-l>", "<c-w>l")
 
 -- CMake
 mapper('', '<leader>cg', ':CMakeGenerate<cr>')
@@ -42,21 +42,20 @@ mapper("n", "<c-K>", ":MoveLine(-1)<CR>")
 mapper("n", "<c-J>", ":MoveLine(1)<CR>")
 
 -- Term
-mapper("t", "<Esc><Esc>", [[<C-\><C-n>]])
-mapper("t", "<C-j>", [[<C-\><C-n><C-w>j]])
-mapper("t", "<C-h>", [[<C-\><C-n><C-w>h]])
-mapper("t", "<C-k>", [[<C-\><C-n><C-w>k]])
-mapper("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+mapper("t", "<Esc><Esc>", [[<c-\><c-n>]])
+mapper("t", "<c-j>", [[<c-\><c-n><c-w>j]])
+mapper("t", "<c-h>", [[<c-\><c-n><c-w>h]])
+mapper("t", "<c-k>", [[<c-\><c-n><c-w>k]])
+mapper("t", "<c-l>", [[<c-\><c-n><c-w>l]])
 
 -- Other basics
 mapper("n", "<Down>", "<Nop>")                      -- [["pdd"pp]] -- move line down
 mapper("n", "<Up>", "<Nop>")                        -- [["pddk"pP]] -- move line up
-mapper("n", "<C-e>", "3<C-e>")                      -- scroll down more quickly
-mapper("n", "<C-y>", "3<C-y>")                      -- scroll up more quickly
+mapper("n", "<c-e>", "3<c-e>")                      -- scroll down more quickly
+mapper("n", "<c-y>", "3<c-y>")                      -- scroll up more quickly
 mapper("n", "<Leader>bn", ":bn<CR>")                -- next buffer
 mapper("n", "<Leader>bp", ":bp<CR>")                -- prev buffer
 mapper("n", "<Leader>bd", ":bp | bd #<CR>")         -- delete the current buffer
-mapper("n", "+", "=")                               -- new format mapping
 mapper("n", "<Leader>nn", ":set number!<CR>")       -- toggle line numbers
 mapper("n", "<Leader>z", ":call ToggleFocus()<CR>") -- toggle focus on current window
 
@@ -69,13 +68,12 @@ mapper("n", "<Leader>rr", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clien
 mapper("n", "<leader>lg", ":LazyGit<CR>")
 
 -- Test mapper
+mapper("n", "<leader>Ts", ":TestSuite<cr>")
 mapper("n", "<leader>Tl", ":TestLast<cr>")
 mapper("n", "<leader>Tf", ":TestFile<cr>")
 mapper("n", "<leader>Tn", ":TestNearest<cr>")
 mapper("n", "<leader>Tv", ":TestVisit<cr>")
-mapper("n", "<leader>Tt", ":TestNearest<cr>")
-mapper("n", "<leader>Tt", ":TestNearest<cr>")
-mapper("n", "<leader>Tt", ":TestNearest<cr>")
+mapper("n", "<leader>Ti", ":TestInfo<cr>")
 
 -- format buffer
 mapper("n", "<leader>F", ":lua vim.lsp.buf.format()<cr>")
