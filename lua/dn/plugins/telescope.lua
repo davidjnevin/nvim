@@ -52,11 +52,11 @@ return {
 					mappings = {
 						i = {
 							["<c-d>"] = "delete_buffer", -- this overrides the built in preview scroller
-							["<c-b>"] = "preview_scrolling_down",
+							["<c-s>"] = "preview_scrolling_down",
 						},
 						n = {
 							["<c-d>"] = "delete_buffer", -- this overrides the built in preview scroller
-							["<c-b>"] = "preview_scrolling_down",
+							["<c-s>"] = "preview_scrolling_down",
 						},
 					},
 				},
