@@ -42,7 +42,7 @@ return {
 					["COLORTERM"] = "truecolor",
 				},
 				layout_config = {
-					prompt_position = "top",
+					prompt_position = "bottom",
 					height = 0.8,
 				},
 			},
@@ -139,7 +139,7 @@ return {
 			desc = "Jump to items in quickfix list",
 		},
 		{
-			"<Leader>pws",
+			"<Leader>fws",
 			function()
 				local word = vim.fn.expand("<cword>")
 				require("telescope.builtin").grep_string({ search = word })
@@ -147,7 +147,7 @@ return {
 			desc = "Grep word under cursor",
 		},
 		{
-			"<Leader>pWs",
+			"<Leader>fWs",
 			function()
 				local word = vim.fn.expand("<cWORD>")
 				require("telescope.builtin").grep_string({ search = word })
