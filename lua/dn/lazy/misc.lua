@@ -1,7 +1,5 @@
 return {
 	-- utility functions
-	"nvim-lua/plenary.nvim",
-
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
 	-- highlight color codes
@@ -10,23 +8,6 @@ return {
 		config = function()
 			require("colorizer").setup(nil, { css = true })
 		end,
-	},
-	-- .editorconfig support
-	{
-		"editorconfig/editorconfig-vim",
-		init = function()
-			vim.g.EditorConfig_exclude_patterns = { "fugitive://.*" }
-		end,
-	},
-	-- convert quotes to template string quotes automatically
-	{
-		"axelvc/template-string.nvim",
-		config = true,
-		ft = {
-			"typescript",
-			"vue",
-			"javascript",
-		},
 	},
 	-- align text
 	{ "godlygeek/tabular", cmd = "Tab" },
