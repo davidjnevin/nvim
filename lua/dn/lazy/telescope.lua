@@ -138,6 +138,22 @@ return {
 			end,
 			desc = "Jump to items in quickfix list",
 		},
+		{
+			"<Leader>pws",
+			function()
+				local word = vim.fn.expand("<cword>")
+				require("telescope.builtin").grep_string({ search = word })
+			end,
+			desc = "Grep word under cursor",
+		},
+		{
+			"<Leader>pWs",
+			function()
+				local word = vim.fn.expand("<cWORD>")
+				require("telescope.builtin").grep_string({ search = word })
+			end,
+			desc = "Grep WORD under cursor",
+		},
 	},
 	cmd = {
 		"Telescope",
