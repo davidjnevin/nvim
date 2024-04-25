@@ -130,7 +130,7 @@ au("FileType", {
 	pattern = "gitrebase",
 	callback = function()
 		for _, key in ipairs { "p", "r", "e", "s", "f", "d", "x", "b", "l", "r", "t", "m" } do
-			vim.keymap.set("n", key, "ciw" .. key .. "<Esc>", { noremap = true, silent = true, buffer = true })
+			vim.keymap.set("n", key, "ciw" .. key .. "<Esc>", { noremap = true, silent = true, buffer = true, desc = "Git rebase" })
 		end
 	end,
 })
