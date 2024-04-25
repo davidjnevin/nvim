@@ -122,7 +122,7 @@ return {
 			desc = "Switch colorscheme",
 		},
 		{
-			"<Leader>gc",
+			"<Leader>gb",
 			"<cmd>Telescope git_branches<CR>",
 			desc = "Checkout branches",
 		},
