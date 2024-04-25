@@ -1,5 +1,7 @@
 return {
 	-- utility functions
+	"nvim-lua/plenary.nvim",
+
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
 	-- highlight color codes
