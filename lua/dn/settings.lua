@@ -1,8 +1,10 @@
 -- Essentials
 vim.g.mapleader = " "
 vim.g.loaded_python_provider = 0
+vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
+
 
 -- vim.g.python3_host_skip_check = 0
 vim.g.python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
@@ -26,7 +28,7 @@ vim.opt.mousescroll = "ver:3,hor:0"                        -- scroll vertically 
 -- Indentation
 vim.opt.autoindent = false  -- continue indentation to new line
 vim.opt.smartindent = false -- add extra indent when it makes sense
-vim.opt.smarttab = false    -- <Tab> at the start of a line behaves as expected
+vim.opt.smarttab = true    -- <Tab> at the start of a line behaves as expected
 vim.opt.expandtab = true    -- <Tab> inserts spaces
 vim.opt.shiftwidth = 4      -- >>, << shift line by 4 spaces
 vim.opt.tabstop = 4         -- <Tab> appears as 4 spaces
