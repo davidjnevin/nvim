@@ -58,7 +58,7 @@ mapper("n", "<Leader>bn", ":bn<CR>")                -- next buffer
 mapper("n", "<Leader>bp", ":bp<CR>")                -- prev buffer
 mapper("n", "<Leader>bd", ":bp | bd #<CR>")         -- delete the current buffer
 mapper("n", "<Leader>nn", ":set number!<CR>")       -- toggle line numbers
-mapper("n", "<Leader>z", ":call ToggleFocus()<CR>") -- toggle focus on current window
+mapper("n", "<Leader>zw", ":call ToggleFocus()<CR>") -- toggle focus on current window
 
 -- terminal
 mapper("n", "<Leader>tn", ":call termcmd#vert()<CR>")                                       -- open new term in vertical split
