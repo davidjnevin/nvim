@@ -77,6 +77,14 @@ au("BufEnter", {
 })
 
 au("BufEnter", {
+	pattern = "*.yaml, *.yml",
+	callback = function()
+		vim.opt_local.filetype = "yaml"
+		vim.cmd "setlocal ts=2 sts=2 sw=2 expandtab"
+	end,
+})
+
+au("BufEnter", {
 	pattern = "*.toml",
 	callback = function()
 		vim.opt_local.filetype = "toml"
