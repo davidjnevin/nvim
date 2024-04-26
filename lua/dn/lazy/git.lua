@@ -9,7 +9,7 @@ local fugitive = {
 		{
 			"<Leader>gd",
 			"<cmd>Gdiffsplit<CR>",
-			desc = "diff file in split",
+			desc = "Diff file in split",
 		},
 	},
 	cmd = "Git",
