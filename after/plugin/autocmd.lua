@@ -119,6 +119,14 @@ au("FileType", {
 	command = "set number",
 })
 
+-- Enable conceallevel = 1 for markdown
+au("BufEnter", {
+	pattern = "*.md",
+	callback = function()
+		vim.opt_local.conceallevel = 1
+	end
+})
+
 -- Enable tab convert to spaces for python
 au("FileType", {
 	pattern = "python",
@@ -130,7 +138,8 @@ au("FileType", {
 	pattern = "gitrebase",
 	callback = function()
 		for _, key in ipairs { "p", "r", "e", "s", "f", "d", "x", "b", "l", "r", "t", "m" } do
-			vim.keymap.set("n", key, "ciw" .. key .. "<Esc>", { noremap = true, silent = true, buffer = true, desc = "Git rebase" })
+			vim.keymap.set("n", key, "ciw" .. key .. "<Esc>",
+				{ noremap = true, silent = true, buffer = true, desc = "Git rebase" })
 		end
 	end,
 })
