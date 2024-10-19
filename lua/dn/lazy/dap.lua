@@ -18,7 +18,7 @@ return {
 		dap.adapters.python = {
 			type = "executable",
 			command = os.getenv "VIRTUAL_ENV",
-			args = { "python", "-m", "debugpy.adapter" },
+			args = { "python3", "-m", "debugpy.adapter" },
 		}
 
 		dap.configurations.python = {

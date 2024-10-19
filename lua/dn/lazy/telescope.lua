@@ -84,7 +84,12 @@ return {
 		{
 			"<Leader>fg",
 			"<cmd>Telescope git_files<CR>",
-			desc = "Find files",
+			desc = "Find git files",
+		},
+		{
+			"<Leader>fh",
+			"<cmd>Telescope find_files hidden=true<CR>",
+			desc = "Find hidden files",
 		},
 		{
 			"<Leader>ff",

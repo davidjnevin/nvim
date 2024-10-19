@@ -7,11 +7,11 @@ vim.g.loaded_perl_provider = 0
 
 
 -- vim.g.python3_host_skip_check = 0
-vim.g.python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
+vim.g.python3_host_prog = "/usr/bin/python3"
 vim.g.pyxversion = 3
 vim.g.bulitin_lsp = true
 
-vim.g.pydocstring_doq_path = "/Library/Frameworks/Python.framework/Versions/3.11/bin/doq"
+vim.g.pydocstring_doq_path = "/usr/bin/python3"
 -- Behaviors
 vim.opt.belloff = "all"                                    -- NO BELLS!
 vim.opt.completeopt = { "menuone", "noselect" }            -- ins-completion how I like it
