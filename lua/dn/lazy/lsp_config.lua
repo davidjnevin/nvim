@@ -34,14 +34,31 @@ return {
                 "rust_analyzer",
                 "ts_ls",
                 "gopls",
+                "jdtls",
             },
             handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
+                -- function(server_name) -- default handler (optional)
+                --     require("lspconfig")[server_name].setup {
+                --         capabilities = capabilities,
+                --     }
+                -- end,
+
+                ["ruff_lsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruff_lsp.setup {
                         capabilities = capabilities,
+                        filetypes = { "python" },
                     }
                 end,
-
+                ["jdtls"] = function()
+                    local javacongif = require('java')
+                    local lspconfig = require("lspconfig")
+                    javacongif.setup()
+                    lspconfig.jdtls.setup {
+                        capabilities = capabilities,
+                        filetypes = { "java" },
+                    }
+                end,
                 ["gopls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.gopls.setup {
