@@ -22,6 +22,7 @@ return {
 				"vim",
 				"vimdoc",
 				"yaml",
+                "java",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
