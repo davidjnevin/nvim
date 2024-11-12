@@ -1,13 +1,14 @@
 return {
-	-- "lukas-reineke/indent-blankline.nvim",
-	-- config = function()
-	--   require("indent_blankline").setup {
-	--     -- for example, context is off by default, use this to turn it on
-	--     show_current_context = true,
-	--     show_current_context_start = true,
-	--   }
-	-- end,
-	"lukas-reineke/indent-blankline.nvim",
-	main = "ibl",
-	opts = {}
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    config = function()
+        require("ibl").setup {}
+        local hooks = require("ibl.hooks")
+        hooks.register(hooks.type.ACTIVE, function(bufnr)
+            return vim.tbl_contains(
+                { "html", "yaml", "svelte", "python", "java", "cpp" },
+                vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+            )
+        end)
+    end,
 }
