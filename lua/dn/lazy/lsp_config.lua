@@ -30,7 +30,7 @@ return {
                 "bashls",
                 "yamlls",
                 "lua_ls",
-                "ruff_lsp",
+                "ruff",
                 "rust_analyzer",
                 "ts_ls",
                 "gopls",
@@ -43,9 +43,9 @@ return {
                 --     }
                 -- end,
 
-                ["ruff_lsp"] = function()
+                ["ruff"] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.ruff_lsp.setup {
+                    lspconfig.ruff.setup {
                         capabilities = capabilities,
                         filetypes = { "python" },
                     }
