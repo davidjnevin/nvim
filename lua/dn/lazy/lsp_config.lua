@@ -16,11 +16,13 @@ return {
     config = function()
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+        local capabilities =
+            vim.tbl_deep_extend(
+                "force",
+                {},
+                vim.lsp.protocol.make_client_capabilities(),
+                cmp_lsp.default_capabilities()
+            )
 
         require("fidget").setup({})
         require("mason").setup()
@@ -49,15 +51,6 @@ return {
                         filetypes = { "python" },
                     }
                 end,
-                -- ["jdtls"] = function()
-                --     local javacongif = require('java')
-                --     local lspconfig = require("lspconfig")
-                --     javacongif.setup()
-                --     lspconfig.jdtls.setup {
-                --         capabilities = capabilities,
-                --         filetypes = { "java" },
-                --     }
-                -- end,
                 ["gopls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.gopls.setup {
@@ -69,11 +62,11 @@ return {
                 ["yamlls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.yamlls.setup {
-                        capabilities = capabilities,
-                        filetypes =
-                        { "yml", "yaml", "yaml.docker-compose", "yaml.gitlab" },
+                        capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+                        -- filetypes = { "yaml", "yaml.docker-compose" },
                         settings = {
                             yaml = {
+                                format = { enable = true },
                                 schemas = {
                                     kubernetes = "k8s-*.yaml",
                                     ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
