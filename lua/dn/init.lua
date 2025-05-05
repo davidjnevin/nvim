@@ -65,7 +65,3 @@ autocmd('LspAttach', {
 			{ buffer = e.buf, desc = "Go to prev diagnostic" })
 	end
 })
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 1
-vim.g.netrw_winsize = 25

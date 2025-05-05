@@ -28,14 +28,14 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "ansiblels",
+                -- "ansiblels",
                 "bashls",
                 "yamlls",
                 "lua_ls",
                 "ruff",
-                "rust_analyzer",
-                "ts_ls",
-                "gopls",
+                -- "rust_analyzer",
+                -- "ts_ls",
+                -- "gopls",
             },
             handlers = {
                 -- function(server_name) -- default handler (optional)

@@ -5,6 +5,18 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
+-- Ntree
+-- to prevent netrw loading
+-- vim.g.loaded_netrw       = 1
+-- vim.g.loaded_netrwPlugin = 1
+vim.g.netrw_preview = 1 -- allow preview panes
+-- vim.g.netrw_browse_split = 2 -- <cr> opens in new vertical split
+vim.g.netrw_banner = 1 -- show banner
+vim.g.netrw_winsize = 25
+-- vim.g.netrw_liststyle = 3 -- tree
+
+
+
 
 -- vim.g.python3_host_skip_check = 0
 vim.g.python3_host_prog = "/usr/bin/python3"
